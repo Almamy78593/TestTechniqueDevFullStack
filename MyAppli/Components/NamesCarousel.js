@@ -1,6 +1,8 @@
 import React from 'react'
-import {Text, View, Image, Dimensions, Animated, PanResponder, StyleSheet, Button} from 'react-native'
+import {Text, View, Image, Dimensions, Animated, PanResponder, StyleSheet, TouchableNativeFeedback, Button} from 'react-native'
 import ReactPropTypes from 'react'
+import Fieldset from 'react'
+
 
 export default class NamesCarousel extends React.Component{
 
@@ -162,8 +164,28 @@ export default class NamesCarousel extends React.Component{
                 width:this.state.width-20,
                 height: 40,
                 position: 'relative',
-                borderStyle:'dashed',
-                borderColor: 'red'
+                backgroundColor: 'orange'
+                },
+
+                textButtonFavoris:{
+                    color:'orange',
+                    backgroundColor:'white',
+                    textAlign:'center',
+                    width:this.state.width-22,
+                    top:1,
+                    left:1,
+                    fontSize: 20,
+                    height: 38
+                },
+                textButtonPrendreCours:{
+                    color:'white',
+                    backgroundColor:'steelblue',
+                    textAlign:'center',
+                    width:this.state.width-22,
+                    top:1,
+                    left:1,
+                    fontSize: 20,
+                    height: 38
                 }
             }
 
@@ -190,21 +212,15 @@ export default class NamesCarousel extends React.Component{
                     </View>
 
                     <View style={style.buttonPrendreCoursContainer}>
-                        <Button
-                            onPress={this._onPressCoursButton}
-                            title="Prendre un cours avec ce teach'r"
-                            color="steelblue"
-                            testID="cours"
-                        />
+                        <TouchableNativeFeedback>
+                            <Text onPress={this._onPressCoursButton} style={style.textButtonPrendreCours}>Prendre un cours avec ce teach'r</Text>
+                        </TouchableNativeFeedback>
                     </View>
 
                     <View style={style.buttonFavorisContainer}>
-                        <Button
-                            onPress={this._onPressFavButton}
-                            title="Retirer ce teach'r de mes favoris"
-                            color="orange"
-                            testID="fav"
-                        />
+                                <TouchableNativeFeedback onPress={this._onPressFavButton} >
+                                    <Text style={style.textButtonFavoris}>Retirer ce teach'r de mes favoris</Text>
+                                </TouchableNativeFeedback>
                     </View>
 
                 </View>
@@ -225,14 +241,15 @@ export default class NamesCarousel extends React.Component{
                             </View>
 
                             <View style={style.buttonPrendreCoursContainer}>
-                                <Button
-                                    onPress={this._onPressCoursButton}
-                                    title="Prendre un cours avec ce teach'r"
-                                    color="steelblue"
-                                    testID="cours"
-                                />
+                                <TouchableNativeFeedback>
+                                    <Text onPress={this._onPressCoursButton} style={style.textButtonPrendreCours}>Prendre un cours avec ce teach'r</Text>
+                                </TouchableNativeFeedback>
                             </View>
                             <View style={style.buttonFavorisContainer}>
+                                
+                                <TouchableNativeFeedback onPress={this._onPressFavButton} >
+                                    <Text style={style.textButtonFavoris}>Retirer ce teach'r de mes favoris</Text>
+                                </TouchableNativeFeedback>
                                 
                             </View>
  
@@ -255,22 +272,15 @@ export default class NamesCarousel extends React.Component{
                     </View>
 
                     <View style={style.buttonPrendreCoursContainer}>
-                        <Button
-                            onPress={this._onPressCoursButton}
-                            title="Prendre un cours avec ce teach'r"
-                            color="steelblue"
-                            testID="cours"
-                        />
+                        <TouchableNativeFeedback>
+                            <Text onPress={this._onPressCoursButton} style={style.textButtonPrendreCours}>Prendre un cours avec ce teach'r</Text>
+                        </TouchableNativeFeedback>
                     </View>
 
                     <View style={style.buttonFavorisContainer}>
-                        < Button
-                            onPress={this._onPressFavButton}
-                            title="Retirer ce teach'r de mes favoris"
-                            color="white"
-                            testID="fav"
-                            
-                        />
+                               <TouchableNativeFeedback onPress={this._onPressFavButton} >
+                                    <Text style={style.textButtonFavoris}>Retirer ce teach'r de mes favoris</Text>
+                                </TouchableNativeFeedback>
                     </View>
 
                </View>
